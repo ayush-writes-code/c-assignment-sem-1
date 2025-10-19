@@ -2,55 +2,58 @@
 #include <math.h>
 #include "mylib.h"
 
-
-int reverseDigits(int n) {
+// #Cp
+// reverse number digits
+int reverseNum(int n) {
     int rev = 0;
-  
-    while (n>0) {
-        rev = rev * 10 + (n%10);
+    while (n > 0) {
+        rev = rev * 10 + n % 10;
         n /= 10;
     }
     return rev;
 }
 
+// check armstrong number
+int isArmstrong(int n) {
+    int temp = n, sum = 0, cntDigits = 0;
+    while (temp) {
+        cntDigits++;
+        temp /= 10;
+    }
 
-int isArmstrong(int num) {
-    int temp = num,sum = 0, digits = 0;
+    temp = n;
     while (temp) {
-        digits++;
-      
+        int rem = temp % 10;
+        sum += pow(rem, cntDigits);
         temp /= 10;
     }
-    temp = num;
-    while (temp) {
-        int d = temp % 10;
-          sum += pow(d, digits);
-        temp /= 10;
-    }
-    return (sum == num);
+
+    return (sum == n);
 }
 
-
-int isAdams(int num) {
-    int sq = num * num;
-  
-    int rev = reverseDigits(num);
+// check adams number
+int isAdams(int n) {
+    int sq = n * n;
+    int rev = reverseNum(n);
     int revSq = rev * rev;
-    return (reverseDigits(sq) == revSq);
+    // if reverse of square == square of reverse
+    return (reverseNum(sq) == revSq);
 }
 
-
-int isPrime(int num) {
-    if (num <= 1) return 0;
-    for (int i = 2; i * i <= num; i++)
-        if (num % i == 0) return 0;
+// check prime number
+int isPrime(int n) {
+    if (n <= 1) return 0;
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0)
+            return 0;
+    }
     return 1;
 }
 
-
-int isPrimePalindrome(int num) {
-    if (isPrime(num) && num ==reverseDigits(num))
+// check number is both prime and palindrome
+int isPrimePalindrome(int n) {
+    if (isPrime(n) && n == reverseNum(n))
         return 1;
-    return 0;
+    else
+        return 0;
 }
-
