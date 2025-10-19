@@ -1,10 +1,11 @@
 #ifndef MYLIB_H
 #define MYLIB_H
 
-int reverseDigits(int n);
-int isArmstrong(int num);
-int isAdams(int num);
-int isPrime(int num);
-int isPrimePalindrome(int num);
+// functions for number operations
+int reverseNum(int n);
+int isArmstrong(int n);
+int isAdams(int n);
+int isPrime(int n);
+int isPrimePalindrome(int n);
 
 #endif
