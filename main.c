@@ -34,10 +34,10 @@ int main() {
 
         switch (choice) {
         case 1:
-            printf(isArmstrong(n) ? "Yup! Armstrong ✅\n" : "Nope, not Armstrong ❌\n");
+            printf(isArmstrong(n) ? "Yup! Armstrong \n" : "Nope, not Armstrong \n");
             break;
         case 2:
-            printf(isAdams(n) ? "Adams Number confirmed 👌\n" : "Not Adams 😅\n");
+            printf(isAdams(n) ? "Adams Number confirmed \n" : "Not Adams \n");
             break;
         case 3:
             printf(isPrimePalindrome(n) ? "Prime & Palindrome — rare combo!\n" : "Nope, not both.\n");
