@@ -8,14 +8,19 @@ int main() {
     int choice, n;
 
     while (1) {
+        
         printf("\n======= MENU =======\n");
         printf("1. Armstrong Check\n");
         printf("2. Adams Check\n");
+        
         printf("3. Prime Palindrome Check\n");
         printf("4. Test Array Functions\n");
         printf("5. Exit\n");
         printf("Enter choice: ");
+
+        
         scanf("%d", &choice);
+        
 
         if (choice == 5) {
             printf("Program Ended.\n");
@@ -59,11 +64,13 @@ int main() {
             printf("Searching %d... ", val);
             int pos = linearSearch(arr, len, val);
             if (pos != -1) printf("Found at index %d\n", pos);
-            else printf("Not found\n");
+            else printf("Not found\n");  
+            
             break;
         }
+            
         default:
-            printf("Invalid choice bro 😅\n");
+            printf("Invalid choice\n");
         }
     }
 
